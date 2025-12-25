@@ -22,7 +22,7 @@ duplyvolume:
   image: "ghcr.io/swnf/duplyvolume:1-latest"
   restart: unless-stopped
   environment:
-    BACKUP_CRON: "* * * * 6 0 0 0"
+    BACKUP_CRON: "0 3 * * 0"
     TZ: "Europe/Berlin"
   volumes:
     - "/var/run/docker.sock:/var/run/docker.sock"
