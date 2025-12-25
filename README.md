@@ -18,15 +18,16 @@ _Not_ implemented:
 Example `docker-compose.yaml` configuration:
 
 ```yaml
-duplyvolume:
-  image: "ghcr.io/swnf/duplyvolume:1-latest"
-  restart: unless-stopped
-  environment:
-    BACKUP_CRON: "0 3 * * 0"
-    TZ: "Europe/Berlin"
-  volumes:
-    - "/var/run/docker.sock:/var/run/docker.sock"
-    - "/path/to/backup:/target"
+services:
+  duplyvolume:
+    image: "ghcr.io/swnf/duplyvolume:1-latest"
+    restart: unless-stopped
+    environment:
+      BACKUP_CRON: "0 3 * * 0"
+      TZ: "Europe/Berlin"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/path/to/backup:/target"
 ```
 
 For S3 support specify `S3_BUCKET_NAME`/`S3_REGION_CODE`/`AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY` and remove the `/target` volume.
