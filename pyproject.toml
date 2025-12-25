@@ -22,6 +22,9 @@ dependencies = [
     "fasteners (>=0.19,<0.20)"
 ]
 
+[project.scripts]
+duplyvolume = "duplyvolume.main:main"
+
 [dependency-groups]
 dev = [
     "pylint (>=2.17.4,<3.0.0)",
@@ -30,7 +33,6 @@ dev = [
     # Version needs to match boto3
     "types-boto3 (==1.35.99)"
 ]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
