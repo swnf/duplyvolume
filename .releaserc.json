@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
+    [
+      "@semantic-release/release-notes-generator",
+      { "preset": "conventionalcommits" }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "sed -i 's/\"0.0.0-dev\"/\"${nextRelease.version}\"/g' pyproject.toml"
+      }
+    ],
+    [
+      "@codedependant/semantic-release-docker",
+      {
+        "dockerTags": [
+          "latest",
+          "{{version}}",
+          "{{major}}-latest",
+          "{{major}}.{{minor}}-latest"
+        ],
+        "dockerImage": "duplyvolume",
+        "dockerRegistry": "ghcr.io",
+        "dockerProject": "swnf",
+        "dockerPlatform": ["linux/amd64", "linux/arm64", "linux/arm/v7"]
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}

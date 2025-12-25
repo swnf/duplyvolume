@@ -1,0 +1,37 @@
+[project]
+name = "duplyvolume"
+version = "0.0.0-dev"
+description = "Docker volume backups made simple"
+authors = [
+    {name = "swnf"}
+]
+license = "MIT"
+license-files = ["LICENSE.md"]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "apscheduler (>=3.10.1,<4.0.0)",
+    "aiodocker (>=0.22.0,<0.23.0)",
+    "tzdata (>=2023.3,<2024.0)",
+    "boto3 (==1.35.99)",
+    # Version needs to match boto3
+    "botocore (==1.35.99)",
+    "pydantic (>=2.4.2,<3.0.0)",
+    "duplicity (>=2.2.3,<3.0.0)",
+    # TODO: This is a duplicity dependency, should not be here
+    "fasteners (>=0.19,<0.20)"
+]
+
+[dependency-groups]
+dev = [
+    "pylint (>=2.17.4,<3.0.0)",
+    "black (>=25.12.0,<26.0.0)",
+    "mypy (>=1.19.1,<2.0.0)",
+    # Version needs to match boto3
+    "types-boto3 (==1.35.99)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
