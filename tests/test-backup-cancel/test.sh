@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -euxo pipefail
 
 . ../common.sh
 
@@ -15,7 +15,7 @@ exec 3< /tmp/duplyvolume-backup-test-output
 rm /tmp/duplyvolume-backup-test-output
 
 # Give the backup some time to start
-sleep 10
+sleep 20
 
 # Test that a healthcheck during a running backup is successful
 # Don't check the output, other log lines might end up in it

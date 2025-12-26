@@ -6,6 +6,9 @@ INFO:duplyvolume\.control_tasks:Starting backup stage 2
 INFO:duplyvolume\.runner\.runner_tasks:Backup stage 2 started
 INFO:duplyvolume\.runner\.docker_utils:Stopping container tests-container1-1
 INFO:duplyvolume\.runner\.runner_tasks:Backing up volume tests_volume1
+INFO:duplyvolume\.runner\.duplicity:Local and Remote metadata are synchronized, no sync needed\.
+INFO:duplyvolume\.runner\.duplicity:Last full backup date: none
+INFO:duplyvolume\.runner\.duplicity:Last full backup is too old, forcing full backup
 INFO:duplyvolume\.control:Cancellation of current backup requested
 ERROR:duplyvolume\.control:Backup failed
 Traceback \(most recent call last\):
