@@ -51,6 +51,7 @@ async def find_myself(client: aiodocker.Docker) -> DockerContainer:
     ]:
         # NOTE: containers.list does not return the full config
         container = await client.containers.get(container_id)
+        logger.info(f'{container["Config"]["Hostname"]} {my_hostname}')
         if container["Config"]["Hostname"] == my_hostname:
             return container
     raise Exception("Unable to find current container, aborting backup")
