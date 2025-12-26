@@ -41,7 +41,7 @@ jobs:
       - name: Set up Docker Compose
         uses: docker/setup-compose-action@v1
       - name: Fix docker socket path
-        run: DOCKER_SOCK_PATH=`docker context inspect -f "{{.Endpoints.docker.Host}}"` && echo "Docker socket is at $DOCKER_SOCK_PATH" && sed -i "s:/var/run/docker.sock:${DOCKER_SOCK_PATH#unix://}:" tests/docker-compose.yaml
+        run: DOCKER_SOCK_PATH=`docker context inspect -f "{{.Endpoints.docker.Host}}"` && echo "Docker socket is at $DOCKER_SOCK_PATH" && sed -i "s:\"/var/run/docker.sock:\"${DOCKER_SOCK_PATH#unix://}:" tests/docker-compose.yaml
       - name: Run tests
         run: cd tests/ && ./run-all-tests.sh
 
