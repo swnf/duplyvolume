@@ -3,14 +3,14 @@
 A simple solution to back up docker volumes.
 
 Features:
-- Support encryption, incremental backups, and S3 storage based on [duplicity](https://duplicity.us/)
-- Auto-discover docker volumes
+- Supports encryption, incremental backups, and S3 storage based on [duplicity](https://duplicity.us/)
+- Auto-discovery of docker volumes
 - Automatically stop/start only the containers that use a volume
 - Schedule backups using cron expressions
-- Overwrite retention period using volume labels
+- Overwrite global retention period using volume labels
 
 _Not_ implemented:
-- Backup/Restore a single volume. You can use the duplicity command line for that.
+- Backup/Restore of a single volume. You can use the duplicity command line for that.
 - Better stop/start strategies. With the current strategy, a container can be stopped multiple times if it has multiple attached volumes or shares a volume with another container. This can lead to inconsistencies in the backup.
 
 ## Example
