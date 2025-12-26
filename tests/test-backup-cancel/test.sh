@@ -5,7 +5,7 @@ set -euxo pipefail
 . ../common.sh
 
 # Create a large file to make sure the backup takes a long time
-docker compose exec container1 sh -c "fallocate -l 1GB /volume1/file1"
+docker compose exec container1 sh -c "fallocate -l 5GB /volume1/file1"
 
 # Start backup in the background
 # See https://stackoverflow.com/a/20018118 for the non-blocking pipe
