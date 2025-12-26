@@ -1,6 +1,8 @@
 docker compose up -d
 
 function cleanup() {
+    # For debugging purposes
+    docker compose logs --no-log-prefix duplyvolume
     docker compose down -t 0 --volumes
 }
 
