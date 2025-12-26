@@ -1,0 +1,2 @@
+^INFO:duplyvolume\.control:Backup will run at .+
+INFO:duplyvolume\.control:Waiting for commands$

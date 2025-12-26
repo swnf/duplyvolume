@@ -1,0 +1,16 @@
+^INFO:duplyvolume\.control:Backup will run at .+
+INFO:duplyvolume\.control:Waiting for commands
+INFO:duplyvolume\.control:Backup requested
+INFO:duplyvolume\.control_tasks:Preparing backup
+INFO:duplyvolume\.control_tasks:Updating volume metadata
+INFO:duplyvolume\.control_tasks:Starting backup stage 2
+INFO:duplyvolume\.runner\.runner_tasks:Backup stage 2 started
+INFO:duplyvolume\.runner\.docker_utils:Stopping container tests-container1-1
+INFO:duplyvolume\.runner\.runner_tasks:Backing up volume tests_volume1
+INFO:duplyvolume\.control:Cancellation of current backup requested
+ERROR:duplyvolume\.control:Backup failed
+Traceback \(most recent call last\):
+.+
+asyncio\.exceptions\.CancelledError
+INFO:duplyvolume\.control_tasks:Runner container stopped
+INFO:duplyvolume\.control:Successfully cancelled$

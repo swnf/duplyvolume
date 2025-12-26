@@ -1,0 +1,48 @@
+^INFO:duplyvolume\.control:Backup will run at .+
+INFO:duplyvolume\.control:Waiting for commands
+INFO:duplyvolume\.control:Backup requested
+INFO:duplyvolume\.control_tasks:Preparing backup
+INFO:duplyvolume\.control_tasks:Updating volume metadata
+INFO:duplyvolume\.control_tasks:Starting backup stage 2
+INFO:duplyvolume\.runner\.runner_tasks:Backup stage 2 started
+INFO:duplyvolume\.runner\.docker_utils:Stopping container tests-container1-1
+INFO:duplyvolume\.runner\.runner_tasks:Backing up volume tests_volume1
+INFO:duplyvolume\.runner\.duplicity:Local and Remote metadata are synchronized, no sync needed\.
+INFO:duplyvolume\.runner\.duplicity:Last full backup date: none
+INFO:duplyvolume\.runner\.duplicity:Last full backup is too old, forcing full backup
+INFO:duplyvolume\.runner\.duplicity:--------------\[ Backup Statistics \]--------------
+INFO:duplyvolume\.runner\.duplicity:StartTime .+ \(.+\)
+INFO:duplyvolume\.runner\.duplicity:EndTime .+ \(.+\)
+INFO:duplyvolume\.runner\.duplicity:ElapsedTime .+ \(.+ seconds\)
+INFO:duplyvolume\.runner\.duplicity:SourceFiles .+
+INFO:duplyvolume\.runner\.duplicity:SourceFileSize .+ \(.+\)
+INFO:duplyvolume\.runner\.duplicity:NewFiles .+
+INFO:duplyvolume\.runner\.duplicity:NewFileSize .+ \(.+\)
+INFO:duplyvolume\.runner\.duplicity:DeletedFiles .+
+INFO:duplyvolume\.runner\.duplicity:ChangedFiles .+
+INFO:duplyvolume\.runner\.duplicity:ChangedFileSize .+ \(.+ bytes\)
+INFO:duplyvolume\.runner\.duplicity:ChangedDeltaSize .+ \(.+ bytes\)
+INFO:duplyvolume\.runner\.duplicity:DeltaEntries .+
+INFO:duplyvolume\.runner\.duplicity:RawDeltaSize .+ \(.+ bytes\)
+INFO:duplyvolume\.runner\.duplicity:TotalDestinationSizeChange .+ \(.+ bytes\)
+INFO:duplyvolume\.runner\.duplicity:Errors 0
+INFO:duplyvolume\.runner\.duplicity:-------------------------------------------------
+INFO:duplyvolume\.runner\.duplicity:
+INFO:duplyvolume\.runner\.runner_tasks:Backup stage 2 done
+INFO:duplyvolume\.runner\.docker_utils:Starting container tests-container1-1
+INFO:duplyvolume\.runner\.runner_tasks:All containers are running again
+INFO:duplyvolume\.control:Backup done
+INFO:duplyvolume\.control:Restore requested
+INFO:duplyvolume\.control_tasks:Preparing restore
+INFO:duplyvolume\.control_tasks:Restoring volumes tests_volume1 \(1/1\)
+INFO:duplyvolume\.control_tasks:Creating volumes with correct metadata if necessary
+INFO:duplyvolume\.control_tasks:Starting restore stage 2
+INFO:duplyvolume\.runner\.runner_tasks:Restore stage 2 started
+INFO:duplyvolume\.runner\.runner_tasks:Restoring volume tests_volume1
+INFO:duplyvolume\.runner\.duplicity:Synchronizing remote metadata to local cache\.\.\.
+INFO:duplyvolume\.runner\.duplicity:Copying duplicity-full-signatures\..+\.sigtar\.gz to local cache\.
+INFO:duplyvolume\.runner\.duplicity:Copying duplicity-full\..+\.manifest to local cache\.
+INFO:duplyvolume\.runner\.duplicity:Last full backup date: .+
+INFO:duplyvolume\.runner\.runner_tasks:Restore stage 2 done
+INFO:duplyvolume\.runner\.runner_tasks:All containers are running again
+INFO:duplyvolume\.control:Restore done$

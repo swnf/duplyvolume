@@ -1,0 +1,17 @@
+^Started command restore, streaming logs\.\.\.
+INFO:duplyvolume\.control:Restore requested
+INFO:duplyvolume\.control_tasks:Preparing restore
+INFO:duplyvolume\.control_tasks:Restoring volumes tests_volume1 \(1/1\)
+INFO:duplyvolume\.control_tasks:Creating volumes with correct metadata if necessary
+INFO:duplyvolume\.control_tasks:Starting restore stage 2
+INFO:duplyvolume\.runner\.runner_tasks:Restore stage 2 started
+INFO:duplyvolume\.runner\.docker_utils:Stopping container tests-container1-1
+INFO:duplyvolume\.runner\.runner_tasks:Restoring volume tests_volume1
+INFO:duplyvolume\.runner\.duplicity:Synchronizing remote metadata to local cache\.\.\.
+INFO:duplyvolume\.runner\.duplicity:Copying duplicity-full-signatures\..+\.sigtar\.gz to local cache\.
+INFO:duplyvolume\.runner\.duplicity:Copying duplicity-full\..+\.manifest to local cache\.
+INFO:duplyvolume\.runner\.duplicity:Last full backup date: .+
+INFO:duplyvolume\.runner\.runner_tasks:Restore stage 2 done
+INFO:duplyvolume\.runner\.docker_utils:Starting container tests-container1-1
+INFO:duplyvolume\.runner\.runner_tasks:All containers are running again
+INFO:duplyvolume\.control:Restore done$

@@ -1,0 +1,20 @@
+services:
+  duplyvolume:
+    build: ..
+    healthcheck:
+      interval: 5s
+    environment:
+      BACKUP_CRON: "0 3 * * 0"
+      TZ: "Europe/Berlin"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/tmp/target:/target"
+
+  container1:
+    image: "alpine:3.22"
+    command: "sleep infinity"
+    volumes:
+      - "volume1:/volume1"
+
+volumes:
+  volume1:

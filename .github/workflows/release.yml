@@ -20,18 +20,33 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.12' 
+          python-version: '3.12'
       - name: Install dependencies
         run: pip install poetry==2.2.1 && poetry install
       - name: Check formatting
         run: poetry run black --check .
       - name: Check types
         run: poetry run mypy .
-    
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Set up Docker
+        uses: docker/setup-docker-action@v4
+      - name: Set up Docker Compose
+        uses: docker/setup-compose-action@v1
+      - name: Run tests
+        run: cd tests/ && ./run-all-tests.sh
+
   release:
     name: Release
     # Should be after checks, see https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#run-semantic-release-only-after-all-tests-succeeded
-    needs: check
+    needs: [check, test]
     runs-on: ubuntu-latest
     permissions:
       contents: write # to be able to publish a GitHub release
